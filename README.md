@@ -10,16 +10,6 @@
 
 **AdbSploit** is an exploiting tool for access android devices, you can control and remote devices with simple commands. 
 
-
- ## Information
-This tool is only for education purpose, usage for attacking target without prior mutual consent is illegal.
-Developers is not responsible for any issues.
-
- ## Best of AdbSploit
-- connect manually or auto connect with random devices
-- exploit one by one or exploit all connected devices
-- control and remote with simple commands
-
 ## Installation
 How to install *AdbSploit* in Kali
 ```bash
