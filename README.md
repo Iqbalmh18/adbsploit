@@ -13,7 +13,7 @@
 
  ## Information
 This tool is only for education purpose, usage for attacking target without prior mutual consent is illegal.
-Developers is not responsible for any problems.
+Developers is not responsible for any issues.
 
  ## Best of AdbSploit
 - connect manually or auto connect with random devices
@@ -39,6 +39,6 @@ git clone https://github.com/iqbalmh18/adbsploit.git && cd adbsploit && chmod +x
 - Read the [readme.md](https://github.com/saydog-official/saydog-framework/blob/master/README.md) before making an issue
 
 ## License
-Saydog framework is made with 🖤 by Iqbalmh18
+AdbSploit is made with ❤️ by Iqbalmh18
 
 
