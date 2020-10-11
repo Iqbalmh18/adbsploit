@@ -21,9 +21,9 @@ git clone https://github.com/iqbalmh18/adbsploit.git && cd adbsploit && chmod +x
 ```
 
 ## Tools Overview
-| Front View | Sample Feature	|
-| ------------  | ------------ |
-|![Index](https://raw.githubusercontent.com/iqbalmh18/adbsploit/main/.readme/20201011_222154.jpg)|![f](https://raw.githubusercontent.com/saydog-official/saydog-framework/master/data/view2.jpg)
+| Front View |
+| ------------  |
+|![Index](https://raw.githubusercontent.com/iqbalmh18/adbsploit/main/.readme/20201011_222154.jpg)|
 
 ### About issues
 - Read the [readme.md](https://github.com/saydog-official/saydog-framework/blob/master/README.md) before making an issue
