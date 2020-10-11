@@ -1,0 +1,45 @@
+#!/usr/bin/bash
+
+w="\033[00m"
+r="\033[31;1m"
+g="\033[32;1m"
+y="\033[33;1m"
+b="\033[34;1m"
+p="\033[35;1m"
+c="\033[36;1m"
+
+cat << EOF
+EOF
+
+usage(){
+    echo -e ""
+    echo -e "ADBSPLOIT"
+    echo -e "---------"
+    echo -e "usage: adbsploit"
+    echo -e "exapmple: adbsploit -h <or> adbsploit --update"
+    echo -e ""
+    echo -e "option:                     description:"
+    echo -e "   -h/--help                show this messages"
+    echo -e "   -u/--update              update tools"
+    echo -e ""
+}
+
+run() {
+    cd ~/adbsploit/ && python3 adbsploit.py
+}
+
+ARGS=$(printf '%q ' "$@")
+
+if [ -z "$*" ]; then
+        run
+elif [ $1 == "-h" ]; then
+        usage
+elif [ $1 == "--help" ]; then
+        usage
+elif [ $1 == "-u" ]; then
+        cd ~/adbsploit/;git pull
+elif [ $1 == "--update" ]; then
+        cd ~/adbsploit/;git pull
+else
+        usage
+fi
