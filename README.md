@@ -11,15 +11,10 @@
 **AdbSploit** is an exploiting tool for access android devices, you can control and remote devices with simple commands. 
 
 ## Installation
-How to install *AdbSploit* in Kali
+How to install *AdbSploit* 
 ```bash
-git clone https://github.com/iqbalmh18/adbsploit.git && cd adbsploit && chmod +x setup-kali.sh && ./setup-kali.sh
+git clone https://github.com/iqbalmh18/adbsploit.git && cd adbsploit && chmod +x setup && ./setup
 ```
-How to install *AdbSploit* in Termux
-```bash
-git clone https://github.com/iqbalmh18/adbsploit.git && cd adbsploit && chmod +x setup-termux.sh && ./setup-termux.sh
-```
-
 ## Tools Overview
 | Front View |
 | ------------  |
