@@ -17,7 +17,7 @@ git clone https://github.com/iqbalmh18/adbsploit.git && cd adbsploit && chmod +x
 ```
 How to install *AdbSploit* in Termux
 ```bash
-git clone https://github.com/iqbalmh18/adbsploit.git && cd adbsploit && chmod +x setup-kali.sh && ./setup-termux.sh
+git clone https://github.com/iqbalmh18/adbsploit.git && cd adbsploit && chmod +x setup-termux.sh && ./setup-termux.sh
 ```
 
 ## Tools Overview
