@@ -31,7 +31,6 @@ git clone https://github.com/iqbalmh18/adbsploit.git && cd adbsploit && chmod +x
 ### About issues
 - Read the [README.md](https://github.com/iqbalmh18/adbsploit/blob/master/README.md) before making an issue.
 
-## License
-AdbSploit is made with ❤️ by Iqbalmh18
+AdbSploit is made with ❤️ by [Iqbalmh18](https://instagram.com/iqbalmh18)
 
 
