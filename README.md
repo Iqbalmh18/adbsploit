@@ -8,7 +8,15 @@
 
 ![Banner](https://raw.githubusercontent.com/iqbalmh18/adbsploit/main/.readme/20201011_222024.jpg)
 
-**AdbSploit** is an exploiting tool for access android devices, you can control and remote devices with simple commands. 
+**AdbSploit** is an exploiting tool for android debug bridge, control and remote devices with simple commands. 
+
+## Dependencies
+- [aapt](https://androidaapt.com/) for dumping android manifest
+- [python3](https://www.python.org/downloads/release/python-386) written in python3
+- [adb](https://pkgs.org/download/android-tools-adb) of course
+- [rich](https://pypi.org/project/rich/) for making table in get_contact
+- [shodan](https://pypi.org/project/shodan/) for getting vuln devices
+- [prompt_toolkit](https://pypi.org/project/prompt_toolkit) i like this one
 
 ## Installation
 How to install *AdbSploit* 
