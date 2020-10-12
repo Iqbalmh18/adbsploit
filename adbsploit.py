@@ -106,6 +106,7 @@ def listener():
             exit(r+"[!]"+w+" Aborted ...")
 
 def main():
+    os.system("clear")
     print(logo)
     print(y+"**AdbSploit**"+w+" is an exploit tool for android debug bridge")
     print(w+"type "+y+"help"+w+" or "+y+"?"+w+" if u need help.")
