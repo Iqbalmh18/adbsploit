@@ -107,7 +107,8 @@ def listener():
 
 def main():
     print(logo)
-    print(w+"Welcome to AdbSploit, type "+y+"help"+w+" or "+y+"?"+w+" if u need help.")
+    print(y+"**AdbSploit**"+w+" is an exploit tool for android debug bridge")
+    print(w+"type "+y+"help"+w+" or "+y+"?"+w+" if u need help.")
     print(w)
     while True:
         try:
