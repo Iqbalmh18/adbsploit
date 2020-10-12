@@ -10,7 +10,7 @@
 
 **AdbSploit** is an exploiting tool for android debug bridge, control and remote devices with simple commands. 
 
-## Dependencies
+## Requirements
 - [aapt](https://androidaapt.com/) for dumping android manifest
 - [python3](https://www.python.org/downloads/release/python-386) written in python3
 - [adb](https://pkgs.org/download/android-tools-adb) of course
