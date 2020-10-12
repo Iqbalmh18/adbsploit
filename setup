@@ -1,0 +1,108 @@
+#!/usr/bin/bash
+# -*- coding: utf-8 -*-
+# AdbSploit installer
+
+w="\033[00m"
+r="\033[31;1m"
+g="\033[32;1m"
+y="\033[33;1m"
+b="\033[34;1m"
+c="\033[36;1m"
+
+banner (){
+clear
+echo -e $r"         ADBSPLOIT INSTALLER "$w"- by "$c"@iqbalmh18"
+echo -e $w"-------------------------------------------------------------"
+echo -e $y"**AdbSploit**"$w" is an exploit tool for android debug bridge"
+echo -e $w"control and remote devices with simple commands."
+echo -e ""
+}
+
+main(){
+    banner
+    echo -e $y"**Dependencies**"$w" for this tools:"
+    echo -e $w"package: aapt, python3, android-tools-adb"
+    echo -e $w"python libraries: shodan, rich, prompt_toolkit"
+    echo -e $w""
+    echo -e -n $w"Do you want to install it (y/n) ";read pil
+    if [ $pil == "y" ] || [ $pil == "Y" ]; then
+    install
+    elif [ $pil == "n" ] || [ $pil == "N" ]; then
+    echo -e $w"Exiting ..."
+    exit
+    else
+    echo -e $w"Wrong input ..."
+    sleep 3
+    main
+    fi
+}
+
+install(){
+    banner
+    echo -e $c"1."$w" Install for Kali-linux/Debian/Others"
+    echo -e $c"2."$w" Install for Termux Android"
+    echo -e $c"3."$w" Cancel & Exit"
+    echo -e ""
+    echo -e -n $w"Choose or leave blank for back to previous: ";read choose
+    if [ $choose == "" ]||[ $choose == " " ]; then
+        main
+    elif [ $choose == "01" ]||[ $choose == "1" ]; then
+        sudo apt-get update
+        sudo apt-get upgrade
+        sudo apt-get install android-tools-adb
+        sudo apt-get install android-tools-fastboot
+        audo apt-get install -y aapt python3 python3-pip
+        python3 -m pip install rich prompt_toopkit shodan
+        cat run > /usr/bin/adbsploit && chmod +x /usr/bin/adbsploit && adbsploit
+    elif [ $choose == "02" ]||[ $choose == "2" ]; then
+        echo -e ""
+        echo -e $b"[*]"$w" Installing all dependencies ..."
+        sleep 1
+        echo -e $b"[*]"$w" Please wait this could take a while"
+        sleep 1
+        if [ -f /data/data/com.termux/files/usr/bin/python3 ]; then
+            echo -e $b"[*]"$w" Python3 is already exists"
+        else
+            echo -e $b"[*]"$w" Installing package python3"
+            pkg install -y python &> /dev//null
+            fi
+        if [ -f /data/data/com.termux/files/usr/bin/aapt ]; then
+            echo -e $b"[*]"$w" Aapt is already exists"
+        else
+            echo -e $b"[*]"$w" Installing package aapt"
+            pkg install -y aapt &> /dev//null
+            fi
+        if [ -f /data/data/com.termux/files/usr/bin/adb ]; then
+            echo -e $b"[*]"$w" Adb is already exists"
+        else
+            echo -e $b"[*]"$w" Installing package adb"
+            wget https://github.com/MasterDevX/Termux-ADB/raw/master/InstallTools.sh -q && bash InstallTools.sh &> /dev//null
+            fi
+        echo -e $b"[*]"$w" Installing python libraries"
+        python3 -m pip install rich prompt_toolkit shodan > /dev//null
+        if [ -f /data/data/com.termux/files/usr/bin/adbsploit ]; then
+            chmod +x ~/../usr/bin/adbsploit
+            echo -e $b"[*]"$w" Wrapper script is already exists"
+            echo -e $g"[*]"$w" Successfully installing adbsploit"
+            adbsploit -h
+        else
+            echo -e $b"[*]"$w" Configurating wrapper script"
+            if [ -f ~/adbsploit/run ]; then
+                cat ~/adbsploit/run > ~/../usr/bin/adbsploit && chmod +x ~/../usr/bin/adbsploit
+                echo -e $g"[*]"$w" Successfully installing adbsploit"
+                adbsploit -h
+            else
+                echo -e $r"[!]"$w" Wrapper script not found"
+                fi
+        fi
+    elif [ $choose == "03" ]||[ $choose == "3" ]; then
+        echo -e $r"[!]"$w"Exiting ..."
+        exit
+    else
+        echo -e $r"[!]"$w" Wrong input ..."
+        sleep 3
+        main
+    fi
+}
+
+main
