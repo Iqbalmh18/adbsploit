@@ -13,10 +13,10 @@ EOF
 
 usage(){
     echo -e ""
-    echo -e "ADBSPLOIT"
-    echo -e "---------"
-    echo -e "usage: adbsploit"
-    echo -e "exapmple: adbsploit -h <or> adbsploit --update"
+    echo -e "ADBSPLOIT - by "$c"@iqbalmh18"
+    echo -e $y"**AdbSploit**"$w" is an exploit tool for android debug bridge"
+    echo -e ""
+    echo -e "usage: adbsploit            running adbsploit"
     echo -e ""
     echo -e "option:                     description:"
     echo -e "   -h/--help                show this messages"
