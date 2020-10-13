@@ -588,9 +588,9 @@ class Exploit():
         elif num == int(5):
             print(w)
             print(w+"<usage>")
-            print(w+"   logcat")
+            print(w+"   logcat <option>")
             print(w+"<option>")
-            print(w+"   --logcat          displaying logcat")
+            print(w+"   --start            starting logcat")
             print(w)
         else:
             pass
