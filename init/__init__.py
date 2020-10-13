@@ -487,6 +487,12 @@ class Exploit():
         else:
             print(r+"[!]"+w+" connection problem on: "+SerialNumber)
 
+    def logcat(self):
+        if Session != "":
+            os.system("adb -s "SerialNumber+" logcat")
+        else:
+            print(r+"[!]"+w+" connection problem on: "+SerialNumber)
+
     def root(self):
         if Session != "":
             rot = os.popen("adb -s "+SerialNumber+" root").read()
@@ -522,6 +528,7 @@ class Exploit():
             print(w+"   screenrec            screenrecord device")
             print(w+"   usekey               remote device with key")
             print(w+"   download             download file/directory")
+            print(w+"   logcat               displaying logcat")
             print(w+"   root                 run device as root")
             print(w+"   reboot               reboot manager")
             print(w)
@@ -577,6 +584,13 @@ class Exploit():
             print(w+"<option>")
             print(w+"   -r/--recovery      reboot to recovery")
             print(w+"   -b/--bootloader    reboot to bootloader")
+            print(w)
+        elif num == int(5):
+            print(w)
+            print(w+"<usage>")
+            print(w+"   logcat")
+            print(w+"<option>")
+            print(w+"   --logcat          displaying logcat")
             print(w)
         else:
             pass
