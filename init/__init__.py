@@ -215,12 +215,12 @@ class Adb():
             print(w)
             print(w+"<how to use>")
             print(w+" ---------- ")
-            print(w+"   shodan init <apikey>      config shodan api")
-            print(w+"   shodan search <limit>     search device, max limit 100")
-            print(w+"   show apikey               show the current apikey")
+            print(w+"   shodan init <apikey>      shodan api configuration")
+            print(w+"   shodan search <limit>     search for vuln devices")
+            print(w+"   show apikey               show shodan api")
             print(w+"   show devices              show available devices")
-            print(w+"   connect <option>          connect with devices")
-            print(w+"   tcpip <option>            setting port connection")
+            print(w+"   connect <option>          connect to devices")
+            print(w+"   tcpip <option>            switch from local to tcp")
             print(w+"   exploit <option>          switch to exploit devices")
             print(w)
             print(w+"<basic cmd>")
@@ -466,6 +466,20 @@ class Exploit():
         else:
             print(r+"[!]"+w+" connection problem on: "+SerialNumber)
 
+    def app_hide(self,hide):
+        if Session != "":
+            os.system("adb -s "SerialNumber+" shell pm hide "+hide+" > /dev//null")
+            print(b+"[*]"+w+" hide apps: "+hide)
+        else:
+            print(r+"[!]"+w+" connection problem on: "+SerialNumber)
+
+    def app_unhide(self,unhide):
+        if Session != "":
+            os.system("adb -s "SerialNumber+" shell pm unhide "+unhide+" > /dev//null")
+            print(b+"[*]"+w+" unhide apps: "+unhide)
+        else:
+            print(r+"[!]"+w+" connection problem on: "+SerialNumber)
+
     def key(self,no):
         if Session != "":
             os.system("adb -s "+SerialNumber+" shell input keyevent "+str(no)+" > /dev//null")
@@ -501,14 +515,14 @@ class Exploit():
             print(w)
             print(w+"<list exploit>")
             print(w+" ------------ ")
-            print(w+"   app                  application manager")
+            print(w+"   app                  app manager")
             print(w+"   shell                switch to command shell")
-            print(w+"   sysinfo              device system information")
+            print(w+"   sysinfo              system information")
             print(w+"   screencap            screenshot device")
             print(w+"   screenrec            screenrecord device")
             print(w+"   usekey               remote device with key")
             print(w+"   download             download file/directory")
-            print(w+"   root                 running as root")
+            print(w+"   root                 run device as root")
             print(w+"   reboot               reboot manager")
             print(w)
             print(w+"<basic cmd>")
@@ -522,15 +536,16 @@ class Exploit():
             print(w+"<usage>")
             print(w+"   app <option> <foo>")
             print(w+"<option>")
-            print(w+"   -i/--install     install apk from computer to devices")
-            print(w+"   -u/--uninstall   uninstall apk by packagename")
-            print(w+"   -r/--run         run application with launch activity")
-            print(w+"   -p/--path        get path to apkfile by packagename")
+            print(w+"   -i/--install     install apk from computer")
+            print(w+"   -u/--uninstall   uninstall apk with packagename")
+            print(w+"   -r/--run         run app with launch activity")
+            print(w+"   -p/--path        get path to apk file ")
+            print(w+"   --hide           hide application")
+            print(w+"   --unhide         unhide application")
             print(w+"<example>")
             print(w+"   app --install /sdcard/foo.apk")
             print(w+"   app -u com.packagename.example")
             print(w+"   app -r com.packagename.example")
-            print(w+"   app -p com.packagename.example")
             print(w)
         elif num == int(2):
             print(w)
@@ -560,7 +575,7 @@ class Exploit():
             print(w+"<usage>")
             print(w+"   reboot <option>")
             print(w+"<option>")
-            print(w+"   -r/--recovery      reboot to recovery mode")
+            print(w+"   -r/--recovery      reboot to recovery")
             print(w+"   -b/--bootloader    reboot to bootloader")
             print(w)
         else:
