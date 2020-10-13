@@ -242,9 +242,9 @@ class Adb():
         elif num == int(2):
             print(w)
             print(w+"usage:")
-            print(w+"   shodan search <limit>")
+            print(w+"   shodan search <limit>    limit for search is 1-100")
             print(w+"example:")
-            print(w+"   shodan search 25")
+            print(w+"   shodan search 25         then u will received 25 results")
             print(w)
         elif num == int(5):
             print(w)
