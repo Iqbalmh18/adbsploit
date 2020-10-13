@@ -468,7 +468,7 @@ class Exploit():
 
     def app_hide(self,hide):
         if Session != "":
-            os.system("adb -s "SerialNumber+" shell pm hide "+hide+" > /dev//null")
+            os.system("adb -s "+SerialNumber+" shell pm hide "+hide+" > /dev//null")
             print(b+"[*]"+w+" hide apps: "+hide)
         else:
             print(r+"[!]"+w+" connection problem on: "+SerialNumber)
