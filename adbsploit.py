@@ -94,6 +94,15 @@ def listener():
                         exploit.help(2)
                 else:
                     exploit.help(2)
+            elif "logcat" in dog:
+                log = dog.split()
+                if len(log) == 2:
+                    if log[1] == "--logcat":
+                        exploit.logcat()
+                    else:
+                        exploit.help(5)
+                else:
+                    exploit.help(5)
             elif "reboot" in dog:
                 boot = dog.split()
                 if len(boot) == 2:
