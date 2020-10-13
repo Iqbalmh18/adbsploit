@@ -489,7 +489,7 @@ class Exploit():
 
     def logcat(self):
         if Session != "":
-            os.system("adb -s "SerialNumber+" logcat")
+            os.system("adb -s "+SerialNumber+" logcat")
         else:
             print(r+"[!]"+w+" connection problem on: "+SerialNumber)
 
