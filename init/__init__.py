@@ -475,7 +475,7 @@ class Exploit():
 
     def app_unhide(self,unhide):
         if Session != "":
-            os.system("adb -s "SerialNumber+" shell pm unhide "+unhide+" > /dev//null")
+            os.system("adb -s "+SerialNumber+" shell pm unhide "+unhide+" > /dev//null")
             print(b+"[*]"+w+" unhide apps: "+unhide)
         else:
             print(r+"[!]"+w+" connection problem on: "+SerialNumber)
