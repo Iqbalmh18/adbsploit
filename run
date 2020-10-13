@@ -13,7 +13,7 @@ EOF
 
 usage(){
     echo -e ""
-    echo -e "ADBSPLOIT - by "$c"@iqbalmh18"
+    echo -e "ADBSPLOIT - version 1.0"
     echo -e ""
     echo -e "usage: adbsploit            running adbsploit"
     echo -e ""
