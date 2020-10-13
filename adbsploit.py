@@ -60,6 +60,12 @@ def listener():
                     elif apkf[1] == "-p" or apkf[1] == "--path":
                         apk = apkf[2]
                         exploit.app_path(apk)
+                    elif apkf[1] == "--hide":
+                        apk = apkf[2]
+                        exploit.app_hide(apk)
+                    elif apkf[1] == "--unhide":
+                        apk = apkf[2]
+                        exploit.app_unhide(apk)
                     else:
                         exploit.help(1)
                 elif len(apkf) == 2:
