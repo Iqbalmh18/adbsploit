@@ -167,10 +167,9 @@ class Adb():
         table.add_column("Number", justify="center", width=20)
         os.system("python3 init/get_contact.py > logs/raw.log 2>/dev//null")
         if os.path.isfile("logs/raw.log"):
-            raw = open("logs/raw.log","r")
-            if "No result found." in raw.readline():
+            cek = os.popen("cat logs/raw.log").readline()
+            if "No" in cek:
                 print(r+"[!]"+w+" no result found")
-                raw.close()
             else:
                 raw.close()
                 os.system("cat logs/raw.log | grep Row > logs/raw1.log;sed -i -e 's/ //g;s/Row://g;s/display_name=/,/g;s/number=//g;s/*//g;s/#//g;s/+//g;s/-//g;s/.$//g' logs/raw1.log")
