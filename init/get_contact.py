@@ -6,7 +6,7 @@ def main():
         a = open("on.log","r")
         while True:
             a1 = a.readline().strip()
-            if not a:
+            if not a1:
                 break
             os.system("adb -s "+a1+" shell content query --uri content://contacts/phones/ --projection display_name:number")
         a.close()
