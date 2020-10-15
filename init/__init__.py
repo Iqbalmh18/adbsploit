@@ -162,53 +162,13 @@ class Adb():
             print(r+"[!]"+w+" device not connected")
 
     def get_contact_all(self):
+        os.system("cd init;touch 1.log 2.log cache")
         if os.path.isfile("logs/online.log"):
-            table = Table(show_header=True, header_style="green")
-            table.add_column("Name", justify="left", width=18)
-            table.add_column("Number", justify="center", width=20)
-            os.system("sed 's/online//g;s/ //g' logs/online.log > logs/address.log")
-            f = open("logs/address.log","r")
-            while True:
-                dv = f.readline().strip()
-                if not dv:
-                    break
-                payload = "content query --uri content://contacts/phones/ --projection display_name:number:notes"
-                os.system("adb -s "+dv+" shell "+payload+" >> logs/get_contact_all.txt 2>&1")
-            f.close()
-            file = open("logs/get_contact_all.txt","r")
-            while True:
-                f1 = file.readline().strip()
-                if not f1:
-                    break
-                if "Row:" in f1:
-                    os.system("echo '"+f1+"' | sed -e 's/ //g;s/Row://g;s/display_name=/,/g;s/number=//g;s/*//g;s/#//g;s/notes=NULL//g;s/+//g;s/-//g;s/.$//' >> logs/get_contact_all.log")
-                else:
-                    continue
-            file.close()
-            if os.path.isfile("logs/get_contact_all.log"):
-                pass
-            else:
-                print(r+"[!]"+w+" no contact found in all devices")
-            files = open("logs/get_contact_all.log","r")
-            nam = -1
-            nom = 0
-            while True:
-                nam += 1
-                nom += 1
-                f2 = files.readline().strip()
-                if not f2:
-                    break
-                o = f2.split(",")
-                if o[2] in o:
-                    table.add_row(
-                        o[1],o[2]
-                        )
-                else:
-                    continue
-            files.close()
-            console.print(table)
-        else:
-            print(r+"[!]"+w+" no online devices found")
+            os.system("python3 get_contact.py > cache 2>&1")
+            os.system("cat cache | grep Row > 2.log;sed -i 's/=/ /g;s/+//g;s/display_name//g;s/number_key//g;s/Row://g;s/notes=NULL//g;s/number//g' 2.log")
+            os.system("rm -rf 1.log cache;cat 2.log > ../result/contact.txt;cd ..;cat result/contact.txt")
+       else:
+            exit("Invalid!")
 
     def help(self,num):
         if num == int(0):
