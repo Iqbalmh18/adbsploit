@@ -167,22 +167,27 @@ class Adb():
         table.add_column("Number", justify="center", width=20)
         os.system("python3 init/get_contact.py > logs/raw.log 2>/dev//null")
         if os.path.isfile("logs/raw.log"):
-            os.system("cat logs/raw.log | grep Row > logs/raw1.log;sed -i -e 's/ //g;s/Row://g;s/display_name=/,/g;s/number=//g;s/*//g;s/#//g;s/+//g;s/-//g;s/.$//g' logs/raw1.log")
-            raw1 = open("logs/raw1.log","r")
-            while True:
-                line = raw1.readline().strip()
-                if not line:
-                    break
-                lines = line.split(",")
-                if len(lines) == 3:
-                    table.add_row(
-                        lines[1],lines[2]
-                        )
-                else:
-                    continue
-            raw1.close()
-            os.system("rm -rf on.log > /dev//null")
-            console.print(table)
+            raw = open("logs/raw.log","r")
+            if "No result found" in raw.readline():
+                print(r+"[!]"+w+" no result found")
+                raw.close()
+            else:
+                os.system("cat logs/raw.log | grep Row > logs/raw1.log;sed -i -e 's/ //g;s/Row://g;s/display_name=/,/g;s/number=//g;s/*//g;s/#//g;s/+//g;s/-//g;s/.$//g' logs/raw1.log")
+                raw1 = open("logs/raw1.log","r")
+                while True:
+                    line = raw1.readline().strip()
+                    if not line:
+                        break
+                    lines = line.split(",")
+                    if len(lines) == 3:
+                        table.add_row(
+                            lines[1],lines[2]
+                            )
+                    else:
+                        continue
+                raw1.close()
+                os.system("rm -rf on.log > /dev//null")
+                console.print(table)
         else:
             print(r+"[!]"+w+" no online devices found")
 
