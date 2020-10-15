@@ -190,8 +190,8 @@ def main():
                         listener()
                     elif exp[1] == "-a" or exp[1] == "--all" and exp[2] == "get_contact":
                         contact = "contact_"+datetime.today().strftime('%d.%m.%Y_%H.%M.%S')+".txt"
-                        os.system("python3 init/all_contact.py > result/"+contact+" &> /dev//null")
-                        print(g+"[*]"+w+" contact saved as: result/"+contact)
+                        adb.get_contact_all()
+                        #print(g+"[*]"+w+" contact saved as: result/"+contact)
                     else:
                         adb.help(6)
                 else:
