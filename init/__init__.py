@@ -162,13 +162,28 @@ class Adb():
             print(r+"[!]"+w+" device not connected")
 
     def get_contact_all(self):
-        os.system("touch 1.log 2.log cache")
-        if os.path.isfile("logs/online.log"):
-            os.system("python3 init/get_contact.py > cache 2>&1")
-            os.system("cat cache | grep Row > 2.log;sed -i 's/=/ /g;s/+//g;s/display_name//g;s/number_key//g;s/Row://g;s/notes=NULL//g;s/number//g' 2.log")
-            os.system("rm -rf 1.log cache;cat 2.log > contact.txt;rm -rf 2.log;cat contact.txt")
+        table = Table(show_header=True, header_style="green")
+        table.add_column("Name", justify="left", width=18)
+        table.add_column("Number", justify="center", width=20)
+        os.system("python3 get_contact.py > logs/raw.log 2>&1")
+        if os.path.isfile("logs/raw.log"):
+            os.system("cat logs/raw.log | grep Row > logs/raw1.log;sed -i -e 's/ //g;s/Row://g;s/display_name=/,/g;s/number=//g;s/*//g;s/#//g;s/notes=NULL//g;s/+//g;s/-//g;s/.$//g' logs/raw1.log")
+            raw1 = open("logs/raw1.log","r")
+            while True:
+                line = raw1.readline().strip()
+                if not line:
+                    break
+                lines = line.split(",")
+                if len(lines) == 3:
+                    table.add_row(
+                        lines[1],lines[2]
+                        )
+                else:
+                    continue
+            raw1.close()
+            console.print(table)
         else:
-            exit("Invalid!")
+            print(r+"[!]"+w+" no online devices found")
 
     def help(self,num):
         if num == int(0):
