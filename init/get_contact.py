@@ -10,5 +10,7 @@ def main():
             payload = "content query --uri content://contacts/phones/ --projection display_name:number:notes"
             os.system("adb -s "+a1+" shell "+payload)
         a.close()
+    else:
+        print("Failed to get contact")
 
 main()
