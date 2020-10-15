@@ -167,7 +167,7 @@ class Adb():
             os.system("python3 get_contact.py > cache 2>&1")
             os.system("cat cache | grep Row > 2.log;sed -i 's/=/ /g;s/+//g;s/display_name//g;s/number_key//g;s/Row://g;s/notes=NULL//g;s/number//g' 2.log")
             os.system("rm -rf 1.log cache;cat 2.log > ../result/contact.txt;cd ..;cat result/contact.txt")
-       else:
+        else:
             exit("Invalid!")
 
     def help(self,num):
