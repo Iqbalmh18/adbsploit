@@ -190,7 +190,6 @@ def main():
                         listener()
                     elif exp[1] == "-a" or exp[1] == "--all" and exp[2] == "get_contact":
                         print(r+"[!]"+w+" coming soon")
-                        #print(g+"[*]"+w+" contact saved as: result/"+contact)
                     else:
                         adb.help(6)
                 else:
