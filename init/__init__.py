@@ -181,6 +181,7 @@ class Adb():
                 else:
                     continue
             raw1.close()
+            os.system("rm -rf on.log > /dev//null")
             console.print(table)
         else:
             print(r+"[!]"+w+" no online devices found")
