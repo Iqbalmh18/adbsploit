@@ -1,6 +1,6 @@
 import os
 def get_contact():
-    s = open("../logs/online.log","r")
+    s = open("logs/online.log","r")
     while True:
         serialno = s.readline().strip()
         if not serialno:
