@@ -168,7 +168,7 @@ class Adb():
         os.system("python3 init/get_contact.py > logs/raw.log 2>/dev//null")
         if os.path.isfile("logs/raw.log"):
             raw = open("logs/raw.log","r")
-            if "No result found" in raw.readline():
+            if "No result found." in raw.readline():
                 print(r+"[!]"+w+" no result found")
                 raw.close()
             else:
