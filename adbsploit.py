@@ -189,7 +189,7 @@ def main():
                         exploit.devices(exp[2])
                         listener()
                     elif exp[1] == "-a" or exp[1] == "--all" and exp[2] == "get_contact":
-                        print(r+"[!]"+w+" coming soon")
+                        adb.get_contact_all()
                     else:
                         adb.help(6)
                 else:
