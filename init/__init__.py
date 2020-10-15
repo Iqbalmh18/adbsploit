@@ -167,7 +167,7 @@ class Adb():
         table.add_column("Number", justify="center", width=20)
         os.system("python3 get_contact.py > logs/raw.log 2>&1")
         if os.path.isfile("logs/raw.log"):
-            os.system("cat logs/raw.log | grep Row > logs/raw1.log;sed -i -e 's/ //g;s/Row://g;s/display_name=/,/g;s/number=//g;s/*//g;s/#//g;s/notes=NULL//g;s/+//g;s/-//g;s/.$//g' logs/raw1.log")
+            os.system("cat logs/raw.log | grep Row > logs/raw1.log;sed -i -e 's/ //g;s/Row://g;s/display_name=/,/g;s/number=//g;s/*//g;s/#//g;s/+//g;s/-//g;s/.$//g' logs/raw1.log")
             raw1 = open("logs/raw1.log","r")
             while True:
                 line = raw1.readline().strip()
