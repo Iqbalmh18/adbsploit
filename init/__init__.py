@@ -164,7 +164,7 @@ class Adb():
     def get_contact_all(self):
         os.system("touch 1.log 2.log cache")
         if os.path.isfile("logs/online.log"):
-            os.system("python3 get_contact.py > cache 2>&1")
+            os.system("python3 init/get_contact.py > cache 2>&1")
             os.system("cat cache | grep Row > 2.log;sed -i 's/=/ /g;s/+//g;s/display_name//g;s/number_key//g;s/Row://g;s/notes=NULL//g;s/number//g' 2.log")
             os.system("rm -rf 1.log cache;cat 2.log > contact.txt;rm -rf 2.log;cat contact.txt")
         else:
