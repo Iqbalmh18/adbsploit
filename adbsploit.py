@@ -189,8 +189,7 @@ def main():
                         exploit.devices(exp[2])
                         listener()
                     elif exp[1] == "-a" or exp[1] == "--all" and exp[2] == "get_contact":
-                        contact = "contact_"+datetime.today().strftime('%d.%m.%Y_%H.%M.%S')+".txt"
-                        adb.get_contact_all()
+                        print(r+"[!]"+w+" coming soon")
                         #print(g+"[*]"+w+" contact saved as: result/"+contact)
                     else:
                         adb.help(6)
