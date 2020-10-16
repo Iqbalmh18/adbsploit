@@ -81,7 +81,7 @@ class Adb():
     def connect(self,devices):
         global Devices
         Devices = devices
-        os.system("adb connect "+devices)
+        os.system("adb connect "+devices+" > /dev//null 2>1")
 
     def connect_all(self,file,debug):
         if os.path.isfile(file) and debug == True:
