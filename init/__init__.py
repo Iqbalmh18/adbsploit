@@ -337,7 +337,7 @@ class Exploit():
             for rep in (("[", ""), ("ro.product.manufacturer", ""),(":",""),("]",""),(" ","")):
                 DevManufactur = DevManufactur.replace(*rep)
                 pass
-            mp4 = DevManufactur+"_"+datetime.today().strftime('%d.%m.%Y_%H.%M.%S')+".mp4"
+            mp4 = DevManufactur+"_"+datetime.today().strftime('%d.%m.%Y')+".mp4"
             sys.stdout.write("\r")
             sys.stdout.write(b+"[*]"+w+" recording is started, press ("+y+"ctrl+c"+w+") to stop") 
             sys.stdout.flush()
