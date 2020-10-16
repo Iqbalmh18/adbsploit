@@ -318,7 +318,7 @@ class Exploit():
             for rep in (("[", ""), ("ro.product.manufacturer", ""),(":",""),("]",""),(" ","")):
                 DevManufactur = DevManufactur.replace(*rep)
                 pass
-            jpg = DevManufactur+"_"+datetime.today().strftime('%d.%m.%Y_%H.%M.%S')+".jpg"
+            jpg = DevManufactur+"_"+datetime.today().strftime('%d.%m.%Y')+".jpg"
             sys.stdout.write("\r")
             sys.stdout.write(b+"[*]"+w+" trying to take screenshot from devices") 
             sys.stdout.flush()
