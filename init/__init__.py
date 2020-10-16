@@ -336,8 +336,8 @@ class Exploit():
             DevManufactur = os.popen("adb -s "+SerialNumber+" shell getprop | grep ro.product.manufacturer").readline().strip()
             for rep in (("[", ""), ("ro.product.manufacturer", ""),(":",""),("]",""),(" ","")):
                 DevManufactur = DevManufactur.replace(*rep)
-            mp4 = DevManufactur+"_"+datetime.today().strftime('%d.%m.%Y')+".mp4"
                 pass
+            mp4 = DevManufactur+"_"+datetime.today().strftime('%d.%m.%Y')+".mp4"
             sys.stdout.write("\r")
             sys.stdout.write(b+"[*]"+w+" recording is started, press ("+y+"ctrl+c"+w+") to stop") 
             sys.stdout.flush()
