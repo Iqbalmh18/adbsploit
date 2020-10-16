@@ -324,7 +324,7 @@ class Exploit():
             sys.stdout.flush()
             os.system("adb -s "+SerialNumber+" shell screencap -p /sdcard/"+jpg+";sleep 5")
             os.system("adb -s "+SerialNumber+" pull /sdcard/"+jpg+" result/ > /dev//null;adb -s "+SerialNumber+" shell rm /sdcard/"+jpg)
-            if os.path.isfile(jpg):
+            if os.path.isfile("result/"+jpg"):
                 sys.stdout.write(b+"\r[*]"+w+" screenshot saved as: "+jpg+"\n")
             else:
                 sys.stdout.write(r+"\r[!]"+w+" failed to take screenshot\n")
@@ -336,14 +336,14 @@ class Exploit():
             DevManufactur = os.popen("adb -s "+SerialNumber+" shell getprop | grep ro.product.manufacturer").readline().strip()
             for rep in (("[", ""), ("ro.product.manufacturer", ""),(":",""),("]",""),(" ","")):
                 DevManufactur = DevManufactur.replace(*rep)
-                pass
             mp4 = DevManufactur+"_"+datetime.today().strftime('%d.%m.%Y')+".mp4"
+                pass
             sys.stdout.write("\r")
             sys.stdout.write(b+"[*]"+w+" recording is started, press ("+y+"ctrl+c"+w+") to stop") 
             sys.stdout.flush()
             os.system("adb -s "+SerialNumber+" shell screenrecord /sdcard/"+mp4+";sleep 3")
             os.system("adb -s "+SerialNumber+" pull /sdcard/"+mp4+" result/ > /dev//null && adb -s "+SerialNumber+" shell rm /sdcard/"+mp4)
-            if os.path.isfile(mp4):
+            if os.path.isfile("result/"+mp4):
                 sys.stdout.write(b+"\r[*]"+w+" screenrecord saved as: "+mp4+"\n")
             else:
                 sys.stdout.write(r+"\r[!]"+w+" failed to record screen\n")
