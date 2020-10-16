@@ -324,7 +324,7 @@ class Exploit():
             sys.stdout.flush()
             os.system("adb -s "+SerialNumber+" shell screencap -p /sdcard/"+jpg+";sleep 5")
             os.system("adb -s "+SerialNumber+" pull /sdcard/"+jpg+" result/ > /dev//null;adb -s "+SerialNumber+" shell rm /sdcard/"+jpg)
-            if os.path.isfile("result/"+jpg"):
+            if os.path.isfile("result/"+jpg):
                 sys.stdout.write(b+"\r[*]"+w+" screenshot saved as: "+jpg+"\n")
             else:
                 sys.stdout.write(r+"\r[!]"+w+" failed to take screenshot\n")
