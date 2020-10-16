@@ -94,7 +94,7 @@ class Adb():
                 line = address.readline().strip()
                 if not line:
                     break
-                adb.connect(str(line+" > /dev//null 2>&1"))
+                adb.connect(line+" > /dev//null 2>1")
             address.close()
             os.system("adb devices | sed 's/device/online/g' > logs/cache.log")
             addres = open("logs/cache.log","r")
@@ -121,7 +121,7 @@ class Adb():
                 line = address.readline().strip()
                 if not line:
                     break
-                adb.connect("{} > /dev//null".format(line))
+                adb.connect("{} > /dev//null 2>1".format(line))
             address.close()
 
     def disconnect(self):
