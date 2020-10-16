@@ -171,7 +171,6 @@ class Adb():
             if "No" in cek:
                 print(r+"[!]"+w+" no result found")
             else:
-                raw.close()
                 os.system("cat logs/raw.log | grep Row > logs/raw1.log;sed -i -e 's/ //g;s/Row://g;s/display_name=/,/g;s/number=//g;s/*//g;s/#//g;s/+//g;s/-//g;s/.$//g' logs/raw1.log")
                 raw1 = open("logs/raw1.log","r")
                 while True:
