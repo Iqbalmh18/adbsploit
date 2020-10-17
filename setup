@@ -51,7 +51,7 @@ install(){
         sudo apt-get upgrade
         sudo apt-get install android-tools-adb
         sudo apt-get install android-tools-fastboot
-        audo apt-get install -y aapt python3 python3-pip
+        sudo apt-get install -y aapt python3 python3-pip
         python3 -m pip install rich prompt_toopkit shodan
         cat run > /usr/bin/adbsploit && chmod +x /usr/bin/adbsploit && adbsploit
     elif [ $choose == "02" ]||[ $choose == "2" ]; then
