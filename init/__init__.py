@@ -508,7 +508,7 @@ class Exploit():
             print(w+"   screencap            screenshot device")
             print(w+"   screenrec            screenrecord device")
             print(w+"   usekey               remote device with key")
-            print(w+"   download             download file/directory")
+            print(w+"   downloads            download file/directory")
             print(w+"   logcat               displaying logcat")
             print(w+"   root                 run device as root")
             print(w+"   reboot               reboot manager")
