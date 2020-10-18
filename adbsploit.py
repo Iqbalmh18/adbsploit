@@ -196,6 +196,8 @@ def main():
                     adb.help(6)
             else:
                 pass
+        except FileNotFoundError:
+            print(r+"[!]"+w+" file not found")
         except KeyboardInterrupt:
             adb.stop()
             exit(r+"[!]"+w+" Aborted ...")
