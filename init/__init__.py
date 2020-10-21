@@ -81,7 +81,7 @@ class Adb():
     def connect(self,devices):
         global Devices
         Devices = devices
-        os.system("adb connect "+devices+" > /dev//null 2>1")
+        os.system("adb connect "+devices)
 
     def connect_all(self,file,debug):
         if os.path.isfile(file) and debug == True:
@@ -121,7 +121,7 @@ class Adb():
                 line = address.readline().strip()
                 if not line:
                     break
-                adb.connect("{}".format(line))
+                adb.connect("{} > /dev//null 2>1".format(line))
             address.close()
 
     def disconnect(self):
