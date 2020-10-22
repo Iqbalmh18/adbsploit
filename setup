@@ -76,6 +76,7 @@ install(){
             echo -e $b"[*]"$w" Adb is already exists"
         else
             echo -e $b"[*]"$w" Installing package adb"
+            pkg install -y wget &> /dev//null
             wget https://github.com/MasterDevX/Termux-ADB/raw/master/InstallTools.sh -q && bash InstallTools.sh &> /dev//null
             fi
         echo -e $b"[*]"$w" Installing python libraries"
