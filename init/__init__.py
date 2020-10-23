@@ -605,6 +605,17 @@ class Exploit():
             print(w+"<option>")
             print(w+"   --start            starting logcat")
             print(w)
+        elif num == int(6):
+            print(w)
+            print(w+"<usage>")
+            print(w+"   push <option> <foo>")
+            print(w+"<option>")
+            print(w+"   -f/--file        upload file")
+            print(w+"   -d/--dir         upload directory")
+            print(w+"<example>")
+            print(w+"   push -f /sdcard/foo.jpg")
+            print(w+"   push -d /sdcard/documents/")
+            print(w)
         else:
             pass
 
