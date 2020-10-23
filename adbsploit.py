@@ -50,6 +50,7 @@ def listener():
                     elif load == "-d" or load[1] == "--dir" and os.path.isdir(load[2]):
                         exploit.upload(load[-1])
                     else:
+                        print(len(load))
                         exploit.help(6)
                 else:
                     exploit.help(6)
