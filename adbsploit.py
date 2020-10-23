@@ -136,7 +136,7 @@ def main():
             elif bal == "clear":
                 os.system("clear")
             elif bal == "update":
-                os.system("git reset --hard && git pull > /dev//null")
+                os.system("git reset --hard && git pull")
                 print(g+"[*]"+w+" source code updated")
             elif bal == "show apikey":
                 apikey = open("logs/api.log","r")
