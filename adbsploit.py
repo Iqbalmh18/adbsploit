@@ -136,7 +136,8 @@ def main():
             elif bal == "clear":
                 os.system("clear")
             elif bal == "update":
-                os.system("git reset --hard && git pull")
+                if os.path.isdir("/data/data/com.termux/"):
+                    os.system("git reset --hard && git pull && cat run > ~/../usr/bin/adbsploit && chmod +x ~/../usr/bin/adbsploit)
                 exit(g+"[*]"+w+" source code updated")
             elif bal == "show apikey":
                 apikey = open("logs/api.log","r")
