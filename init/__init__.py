@@ -125,7 +125,7 @@ class Adb():
             address.close()
 
     def disconnect(self):
-        os.system("adb disconnect > /dev//null")
+        os.system("adb disconnect > /dev//null 2>1")
 
     def shodan_init(self,api):
         global ShodanApi
