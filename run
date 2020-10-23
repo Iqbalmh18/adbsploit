@@ -38,7 +38,7 @@ elif [ $1 == "--help" ]; then
 elif [ $1 == "-u" ]; then
         cd ~/adbsploit/;git pull
 elif [ $1 == "--update" ]; then
-        cd ~/adbsploit/;git pull
+        cd ~/adbsploit/;git reset --hard && git pull
 else
         usage
 fi
