@@ -137,7 +137,7 @@ def main():
                 os.system("clear")
             elif bal == "update":
                 os.system("git reset --hard && git pull")
-                print(g+"[*]"+w+" source code updated")
+                exit(g+"[*]"+w+" source code updated")
             elif bal == "show apikey":
                 apikey = open("logs/api.log","r")
                 print(b+"[*]"+w+" shodan api: "+apikey.readline().strip())
