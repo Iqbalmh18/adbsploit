@@ -354,7 +354,7 @@ class Exploit():
     def download(self,pull,path,out):
         if Session != "" and pull == "dir" and os.path.isdir(out):
             sys.stdout.write("\r")
-            sys.stdout.write(b+"[*]"+w+" downloading file: "+path) 
+            sys.stdout.write(b+"[*]"+w+" downloading directory: "+path) 
             sys.stdout.flush()
             os.system("adb -s "+SerialNumber+" pull "+path+" "+out+" > /dev//null")
             outs = out+"/"+os.path.basename(path)
@@ -364,7 +364,7 @@ class Exploit():
                 sys.stdout.write(b+"\r[*]"+w+" failed to download directory\n") 
         elif Session != "" and pull == "file" and os.path.isdir(out):
             sys.stdout.write("\r")
-            sys.stdout.write(b+"[*]"+w+" downloading directory: "+path) 
+            sys.stdout.write(b+"[*]"+w+" downloading file: "+path) 
             sys.stdout.flush()
             os.system("adb -s "+SerialNumber+" pull "+path+" "+out+" > /dev//null")
             outs = out+"/"+os.path.basename(path)
