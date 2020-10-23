@@ -52,7 +52,7 @@ def listener():
                     else:
                         exploit.help(7)
                 else:
-                    exploit.help(7)
+                    exploit.help(6)
             elif "app" in dog:
                 apkf = dog.split()
                 if len(apkf) == 3:
