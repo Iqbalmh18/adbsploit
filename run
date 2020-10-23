@@ -41,4 +41,4 @@ elif [ $1 == "--update" ]; then
         cd ~/adbsploit/;git reset --hard && git pull
 else
         usage
-fi
+        fi
