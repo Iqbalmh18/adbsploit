@@ -45,12 +45,11 @@ def listener():
             elif "push" in dog:
                 load = dog.split(" ")
                 if len(load) == 3:
-                    if load == "-f" or load[1] == "--file" and os.path.isfile(load[2]):
+                    if load[1] == "-f" or load[1] == "--file" and os.path.isfile(load[2]):
                         exploit.upload(load[-1])
-                    elif load == "-d" or load[1] == "--dir" and os.path.isdir(load[2]):
+                    elif load[1] == "-d" or load[1] == "--dir" and os.path.isdir(load[2]):
                         exploit.upload(load[-1])
                     else:
-                        print(len(load))
                         exploit.help(6)
                 else:
                     exploit.help(6)
