@@ -28,7 +28,7 @@ def listener():
             elif "root" in dog:
                 exploit.root()
             elif "pull" in dog:
-                load = dog.split()
+                load = dog.split(" ")
                 if len(load) == 5:
                     if load[1] == "-f" or load[1] == "--file" and load[3] == "-o" or load[3] == "--output":
                         file = load[2]
