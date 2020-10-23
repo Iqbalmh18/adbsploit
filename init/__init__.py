@@ -490,6 +490,10 @@ class Exploit():
         else:
             print(r+"[!]"+w+" connection problem on: "+SerialNumber)
 
+    def keyinput(self,text):
+        if Session != "":
+            os.system("adb -s "+SerialNumber+" shell input text '"+text+"' > /dev//null 2>1")
+
     def logcat(self):
         if Session != "":
             os.system("adb -s "+SerialNumber+" logcat")
