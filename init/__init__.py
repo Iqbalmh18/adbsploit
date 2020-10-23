@@ -356,7 +356,8 @@ class Exploit():
             sys.stdout.write(b+"[*]"+w+" downloading file: "+path) 
             sys.stdout.flush()
             os.system("adb -s "+SerialNumber+" pull "+path+" "+out+" > /dev//null")
-            if os.path.isfile(out+"/"+path):
+            outs = out+"/"+os.path.basename(path)
+            if os.path.isdir(outs):
                 sys.stdout.write(b+"\r[*]"+w+" file saved as: "+out+"/"+path+"\n") 
             else:
                 sys.stdout.write(b+"\r[*]"+w+" failed to download file\n") 
@@ -365,7 +366,8 @@ class Exploit():
             sys.stdout.write(b+"[*]"+w+" downloading directory: "+path) 
             sys.stdout.flush()
             os.system("adb -s "+SerialNumber+" pull "+path+" "+out+" > /dev//null")
-            if os.path.ispath(out+"/"+path):
+            outs = out+"/"+os.path.basename(path)
+            if os.path.isfile(outs):
                 sys.stdout.write(b+"\r[*]"+w+" directory saved as: "+out+"/"+path+"\n") 
             else:
                 sys.stdout.write(b+"\r[*]"+w+" failed to download directory\n") 
