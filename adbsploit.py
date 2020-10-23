@@ -137,7 +137,11 @@ def main():
                 os.system("clear")
             elif bal == "update":
                 if os.path.isdir("/data/data/com.termux/"):
-                    os.system("git reset --hard && git pull && cat run > ~/../usr/bin/adbsploit && chmod +x ~/../usr/bin/adbsploit)
+                    os.system("git reset --hard && git pull && cat run > ~/../usr/bin/adbsploit && chmod +x ~/../usr/bin/adbsploit")
+                elif os.path.isdir("/usr/local/bin"):
+                    os.system("git reset --hard && git pull && cat run > /usr/local/bin/adbsploit && chmod +x /usr/local/bin/adbsploit")
+                else:
+                    print(r+"[!]"+w+" os not supported")
                 exit(g+"[*]"+w+" source code updated")
             elif bal == "show apikey":
                 apikey = open("logs/api.log","r")
