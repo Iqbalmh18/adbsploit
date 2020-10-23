@@ -101,6 +101,8 @@ def listener():
                     if key[1] == "-e" or key[1] == "--exec" and key[2] < 86:
                         key = int(key[2])
                         exploit.key(key)
+                    elif key[1] == "-w" or key[1] == "--write" and key[2] != "":
+                        exploit.keyinput(key[2])
                     else:
                         exploit.help(2)
                 else:
