@@ -356,20 +356,20 @@ class Exploit():
             sys.stdout.write("\r")
             sys.stdout.write(b+"[*]"+w+" downloading directory: "+path) 
             sys.stdout.flush()
-            os.system("adb -s "+SerialNumber+" pull "+path+" "+out+" > /dev//null")
+            os.system("adb -s "+SerialNumber+" pull "+path+" "+out+" > /dev//null 2>1")
             outs = out+"/"+os.path.basename(path)
             if os.path.isdir(outs):
-                sys.stdout.write(b+"\r[*]"+w+" directory saved as: "+outs+"\n") 
+                sys.stdout.write(b+"\r[*]"+w+" download successfully saved as: "+outs+"\n") 
             else:
                 sys.stdout.write(b+"\r[*]"+w+" failed to download directory\n") 
         elif Session != "" and pull == "file" and os.path.isdir(out):
             sys.stdout.write("\r")
             sys.stdout.write(b+"[*]"+w+" downloading file: "+path) 
             sys.stdout.flush()
-            os.system("adb -s "+SerialNumber+" pull "+path+" "+out+" > /dev//null")
+            os.system("adb -s "+SerialNumber+" pull "+path+" "+out+" > /dev//null 2>1")
             outs = out+"/"+os.path.basename(path)
             if os.path.isfile(outs):
-                sys.stdout.write(b+"\r[*]"+w+" file saved as: "+outs+"\n") 
+                sys.stdout.write(b+"\r[*]"+w+" download successfully saved as: "+outs+"\n") 
             else:
                 sys.stdout.write(b+"\r[*]"+w+" failed to download file\n") 
         else:
@@ -511,7 +511,7 @@ class Exploit():
             print(w+"   screencap            screenshot device")
             print(w+"   screenrec            screenrecord device")
             print(w+"   usekey               remote device with key")
-            print(w+"   downloads            download file/directory")
+            print(w+"   pull                 download file/directory")
             print(w+"   logcat               displaying logcat")
             print(w+"   root                 run device as root")
             print(w+"   reboot               reboot manager")
@@ -552,14 +552,14 @@ class Exploit():
         elif num == int(3):
             print(w)
             print(w+"<usage>")
-            print(w+"   downloads <option> <foo>")
+            print(w+"   pull <option> <foo>")
             print(w+"<option>")
             print(w+"   -f/--file        download file from device")
             print(w+"   -d/--dir         download directory from device")
             print(w+"   -o/--output      output to local storage")
             print(w+"<example>")
-            print(w+"   downloads -f /sdcard/foo.jpg --output /sdcard")
-            print(w+"   downloads -d /sdcard/documents/ -o ~/Desktop/")
+            print(w+"   pull -f /sdcard/foo.jpg --output /sdcard")
+            print(w+"   pull -d /sdcard/documents/ -o ~/Desktop/")
             print(w)
         elif num == int(4):
             print(w)
