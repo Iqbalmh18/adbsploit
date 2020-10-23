@@ -382,13 +382,13 @@ class Exploit():
                 sys.stdout.write(b+"[*]"+w+" uploading file: "+push) 
                 sys.stdout.flush()
                 os.system("adb -s "+SerialNumber+" push "+push+" /sdcard > /dev//null 2>1")
-                sys.stdout.write(b+"\r[*]"+w+" file uploaded saved as: /sdcard/"+push+"\n") 
+                sys.stdout.write(b+"\r[*]"+w+" file uploaded saved as: /sdcard/"+os.path.basename(push)+"\n") 
             elif os.path.isdir(push):
                 sys.stdout.write("\r")
                 sys.stdout.write(b+"[*]"+w+" uploading directory: "+push) 
                 sys.stdout.flush()
                 os.system("adb -s "+SerialNumber+" push "+push+" /sdcard > /dev//null 2>1")
-                sys.stdout.write(b+"\r[*]"+w+" directory uploaded saved as: /sdcard/"+push+"\n") 
+                sys.stdout.write(b+"\r[*]"+w+" directory uploaded saved as: /sdcard/"+os.path.basename(push)+"\n") 
             else:
                 print(r+"[!]"+w+" file or directory not found")
         else:
