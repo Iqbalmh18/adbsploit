@@ -50,7 +50,7 @@ def listener():
                     elif load == "-d" or load[1] == "--dir" and os.path.isdir(load[2]):
                         exploit.upload(load[2])
                     else:
-                        exploit.help(7)
+                        exploit.help(6)
                 else:
                     exploit.help(6)
             elif "app" in dog:
