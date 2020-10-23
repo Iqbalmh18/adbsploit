@@ -382,23 +382,13 @@ class Exploit():
                 sys.stdout.write(b+"[*]"+w+" uploading file: "+push) 
                 sys.stdout.flush()
                 os.system("adb -s "+SerialNumber+" push "+push+" /sdcard > /dev//null 2>1")
-                pushed = os.path.basename(push)
-                cek = os.popen("adb -s "+SerialNumber+" shell 'cd /sdcard/;ls' | grep "+pushed).readline()
-                if pushed in cek:
-                    sys.stdout.write(b+"\r[*]"+w+" file uploaded saved as: /sdcard/"+pushed+"\n") 
-                else:
-                    sys.stdout.write(b+"\r[*]"+w+" failed to upload file\n") 
+                sys.stdout.write(b+"\r[*]"+w+" file uploaded saved as: /sdcard/"+push+"\n") 
             elif os.path.isdir(push):
                 sys.stdout.write("\r")
                 sys.stdout.write(b+"[*]"+w+" uploading directory: "+push) 
                 sys.stdout.flush()
                 os.system("adb -s "+SerialNumber+" push "+push+" /sdcard > /dev//null 2>1")
-                pushed = os.path.basename(push)
-                cek = os.popen("adb -s "+SerialNumber+" shell 'cd /sdcard/;ls' | grep "+pushed).readline()
-                if pushed in cek:
-                    sys.stdout.write(b+"\r[*]"+w+" directory uploaded saved as: /sdcard/"+pushed+"\n") 
-                else:
-                    sys.stdout.write(b+"\r[*]"+w+" failed to upload directory\n") 
+                sys.stdout.write(b+"\r[*]"+w+" directory uploaded saved as: /sdcard/"+push+"\n") 
             else:
                 print(r+"[!]"+w+" file or directory not found")
         else:
