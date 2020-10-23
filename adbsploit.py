@@ -42,6 +42,17 @@ def listener():
                         exploit.help(3)
                 else:
                     exploit.help(3)
+            elif "push" in dog:
+                load = dog.split(" ")
+                if len(load) == 3:
+                    if load == "-f" or load[1] == "--file" and os.path.isfile(load[2]):
+                        exploit.upload(load[2])
+                    elif load == "-d" or load[1] == "--dir" and os.path.isdir(load[2]):
+                        exploit.upload(load[2])
+                    else:
+                        exploit.help(7)
+                else:
+                    exploit.help(7)
             elif "app" in dog:
                 apkf = dog.split()
                 if len(apkf) == 3:
