@@ -358,9 +358,9 @@ class Exploit():
             os.system("adb -s "+SerialNumber+" pull "+path+" "+out+" > /dev//null")
             outs = out+"/"+os.path.basename(path)
             if os.path.isdir(outs):
-                sys.stdout.write(b+"\r[*]"+w+" file saved as: "+out+"/"+path+"\n") 
+                sys.stdout.write(b+"\r[*]"+w+" directory saved as: "+outs+"\n") 
             else:
-                sys.stdout.write(b+"\r[*]"+w+" failed to download file\n") 
+                sys.stdout.write(b+"\r[*]"+w+" failed to download directory\n") 
         elif Session != "" and pull == "file" and os.path.isdir(out):
             sys.stdout.write("\r")
             sys.stdout.write(b+"[*]"+w+" downloading directory: "+path) 
@@ -368,9 +368,9 @@ class Exploit():
             os.system("adb -s "+SerialNumber+" pull "+path+" "+out+" > /dev//null")
             outs = out+"/"+os.path.basename(path)
             if os.path.isfile(outs):
-                sys.stdout.write(b+"\r[*]"+w+" directory saved as: "+out+"/"+path+"\n") 
+                sys.stdout.write(b+"\r[*]"+w+" file saved as: "+outs+"\n") 
             else:
-                sys.stdout.write(b+"\r[*]"+w+" failed to download directory\n") 
+                sys.stdout.write(b+"\r[*]"+w+" failed to download file\n") 
         else:
             print(r+"[!]"+w+" connection problem on: "+SerialNumber)
 
