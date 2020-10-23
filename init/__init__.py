@@ -17,7 +17,7 @@ from prompt_toolkit.formatted_text import HTML
 from prompt_toolkit.completion import WordCompleter
 ######################### global ########################
 WordAdb = WordCompleter(['?','help', 'update', 'clear', 'exit', 'shodan init ', 'shodan search ', 'connect ', 'tcpip', 'show apikey', 'show devices', 'exploit'])
-WordExp = WordCompleter(['?','help','clear','back','app','shell','sysinfo','screencap','screenrec','usekey','download', 'root','reboot'])
+WordExp = WordCompleter(['?','help','clear','back','app','shell','sysinfo','screencap','screenrec','usekey','pull', 'push', 'root','reboot'])
 KeyList = ('UNKOWN','MENU','SOFT_RIGHT','HOME','BACK','ENDCALL','CALL','0','1','2','3','4','5','6','7','8','9','START','POUND','DPAD_UP','DPAD_DOWN','DPAD_LEFT','DPAD_RIGHT','DPAD_CENTER','VOLUME_UP','VOLUME_DOWN','POWER','CAMERA','CLEAR','A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z','COMMA','PERIOD','ALT_LEFT','ALT_RIGHT','SHIFT_LEFT','SHIFT_RIGHT','TAB','SPACE','SYM','EXPLORER','ENVELOPE','ENTER','DELETE','GRAVE','MINUS','EQUALS','LEFT_BRACKET','RIGHT_BRACKET','BACKSLASH','SEMICOLON','APOSTROPHE','SLASH','AT','NUM','HEADSETHOOK','FOKUS','PLUS','MENU','NOTIFICATION','SEARCH','TAG')
 
 input = PromptSession()
